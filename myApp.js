@@ -46,11 +46,14 @@ mongoose.connect('mongodb+srv://admin:<password>@cluster0-ytlzy.mongodb.net/test
 
 var Schema = mongoose.Schema;
 
-var Person = new Schema({
-  name : string [required],
-  age : number,
-  favoriteFoods : [String] 
+const personSchema = new Schema({
+  name: { type: String, required: true },
+  age: Number,
+  favoriteFoods: [String]
 });
+
+const Person = mongoose.model("Person", personSchema);
+
 /* = <Your Model> */
 
 // **Note**: Glitch is a real server, and in real servers interactions with
