@@ -99,7 +99,7 @@ var createAndSavePerson = function(done) {
 
   me.save(function(err, data) {
     if (err) {
-      return console.error(err);
+      return done(err);
     }
     done(null, data)
   });
