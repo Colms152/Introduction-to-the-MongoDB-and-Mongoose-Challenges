@@ -1,3 +1,4 @@
+var mongoose = require('mongoose');
 /**********************************************
 * 3. FCC Mongo & Mongoose Challenges
 * ==================================
@@ -13,6 +14,8 @@
 // as MONGO_URI. Connect to the database using the following syntax:
 //
 // mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }); 
+
+mongoose.connect('mongodb+srv://admin:<password>@cluster0-ytlzy.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }); 
 
 
 
