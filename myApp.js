@@ -269,7 +269,14 @@ var findAndUpdate = function(personName, done) {
 
 var removeById = function(personId, done) {
   
-  done(null/*, data*/);
+  Person.findByIdAndRemove(personId, (err, data) => {
+    
+    if (err) {
+      return done(err);
+    }
+  
+    done(null, data);
+  });
     
 };
 
