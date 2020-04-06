@@ -160,8 +160,10 @@ var findPeopleByName = function(personName, done) {
 // argument `food` as search key
 
 var findOneByFood = function(food, done) {
-
-  done(null/*, data*/);
+  Person.findOne({favoriteFoods: food}, function(err, personFound){
+    if(err) {return console.log(err);}
+    done(null, personFound);
+  })
   
 };
 
