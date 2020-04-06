@@ -75,7 +75,7 @@ const Person = mongoose.model("Person", personSchema);
 /** # [C]RUD part I - CREATE #
 /*  ========================== */
 
-const Schema = mongoose.Schema;
+
 
 
 /** 3) Create and Save a Person */
