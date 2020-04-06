@@ -1,4 +1,3 @@
-var mongoose = require('mongoose');
 /**********************************************
 * 3. FCC Mongo & Mongoose Challenges
 * ==================================
@@ -15,8 +14,8 @@ var mongoose = require('mongoose');
 //
 // mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }); 
 
-mongoose.connect('mongodb+srv://admin:<password>@cluster0-ytlzy.mongodb.net/test?retryWrites=true&w=majority', { useNewUrlParser: true, useUnifiedTopology: true }); 
-
+var mongoose = require('mongoose');
+mongoose.connect(process.env.MONGO_URI);
 
 
 /** # SCHEMAS and MODELS #
@@ -46,7 +45,7 @@ mongoose.connect('mongodb+srv://admin:<password>@cluster0-ytlzy.mongodb.net/test
 
 var Schema = mongoose.Schema;
 
-const personSchema = new Schema({
+var personSchema = new Schema({
   name: { type: String, required: true },
   age: Number,
   favoriteFoods: [String]
@@ -94,9 +93,10 @@ var Person = mongoose.model("Person", personSchema);
 //    ...do your stuff here...
 // });
 
-var createAndSavePerson = function(done) {
-  var me = new Person({name: "Colm Sheehan", age: 21, favoriteFoods: ["Steak", "Curry"]});
+var me = new Person({name: "Colm Sheehan", age: 21, favoriteFoods: ["Steak", "Curry"]});
 
+
+var createAndSavePerson = function(done) {  
   me.save(function(err, data) {
     if (err) {
       return done(err);
