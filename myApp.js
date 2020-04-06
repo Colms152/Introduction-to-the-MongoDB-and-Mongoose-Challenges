@@ -44,7 +44,14 @@ mongoose.connect('mongodb+srv://admin:<password>@cluster0-ytlzy.mongodb.net/test
 
 // <Your code here >
 
-var Person /* = <Your Model> */
+var Schema = mongoose.Schema;
+
+var Person = new Schema({
+  name : string [required],
+  age : number,
+  favoriteFoods : [String] 
+});
+/* = <Your Model> */
 
 // **Note**: Glitch is a real server, and in real servers interactions with
 // the db are placed in handler functions, to be called when some event happens
@@ -64,6 +71,9 @@ var Person /* = <Your Model> */
 
 /** # [C]RUD part I - CREATE #
 /*  ========================== */
+
+const Schema = mongoose.Schema;
+
 
 /** 3) Create and Save a Person */
 
