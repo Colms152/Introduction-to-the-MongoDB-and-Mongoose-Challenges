@@ -98,7 +98,9 @@ var createAndSavePerson = function(done) {
   var me = new Person({name: "Colm Sheehan", age: 21, favoriteFoods: ["Steak", "Curry"]});
 
   me.save(function(err, data) {
-    if (err) return console.error(err);
+    if (err) {
+      return console.error(err);
+    }
     done(null, data)
   });
 };
