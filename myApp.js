@@ -120,7 +120,7 @@ var arrayOfPeople=[ {name: "Katie Sheehan", age: 25, favoriteFoods: ["Leaves", "
                     {name: "Hannah Sheehan", age: 23, favoriteFoods: ["Cake", "Noodles"]}];
 
 var createManyPeople = function(arrayOfPeople, done) {
-    me.create(arrayOfPeople,function(err, data){
+    Person.create(arrayOfPeople,function(err, data){
       if(err){
         return done(err);
       }
